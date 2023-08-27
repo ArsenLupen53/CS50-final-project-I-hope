@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add data
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <div class="inputBox">
+            <input autocomplete="off" autofocus name="body-name" placeholder="Write here..." type="text" required="">
+            <span>Body Part:</span>
+        </div>
+
+        <div class="inputBox">
+            <input autocomplete="off" autofocus name="exercise-name" placeholder="Write here..." type="text" required="">
+            <span>Exercise Name:</span>
+        </div>
+
+        <div class="inputBox">
+            <input autocomplete="off" autofocus name="sets"  type="number" required="">
+            <span>Sets:</span>
+        </div>
+
+        <div class="inputBox">
+            <input autocomplete="off" autofocus name="reps"  type="number" required="">
+            <span>Reps:</span>
+        </div>
+
+        <div class="inputBox">
+            <input autocomplete="off" autofocus name="kgs"  type="number" required="">
+            <span>Kgs:</span>
+        </div>
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}

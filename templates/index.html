@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Body part</th>
+            <th>Exercise name</th>
+            <th>Set</th>
+            <th>Rep</th>
+            <th>Kg</th>
+            <th>Load</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for track in tracks %}
+        <tr>
+            <td>{{ track["body"] }}</td>
+            <td>{{ track["exercise"] }}</td>
+            <td>{{ track["sett"] }}</td>
+            <td>{{ track["rep"] }}</td>
+            <td>{{ track["kg"] }}</td>
+            <td>{{ track["kg"] * track["rep"] * track["sett"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
