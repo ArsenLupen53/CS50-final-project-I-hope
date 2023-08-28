@@ -16,4 +16,4 @@
 
 
 --INSERT INTO users(username, hash) VALUES ("ahmet" ,"123");
-SELECT * FROM users;
+--SELECT * FROM users;
