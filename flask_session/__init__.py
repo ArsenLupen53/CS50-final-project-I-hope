@@ -38,7 +38,7 @@ class Session:
     The second possibility is to create the object once and configure the
     application later::
 
-        sess = Session()
+       sess = Session() 
 
         def create_app():
             app = Flask(__name__)
