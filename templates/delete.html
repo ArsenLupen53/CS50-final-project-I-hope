@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Delete
+{% endblock %}
+
+{% block main %}
+
+    <form action="/delete" method="post">
+        <div class="mb-3">
+            <h4>Enter the id of exercie you want to delete</h4>
+            <input autocomplete="off" name="delete-id" class="form-control mx-auto w-auto" placeholder="Enter" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Delete</button>
+    </form>
+{% endblock %}

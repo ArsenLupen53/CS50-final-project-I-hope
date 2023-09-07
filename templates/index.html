@@ -5,28 +5,116 @@ Home
 {% endblock %}
 
 {% block main %}
+
+    <h3>Believe in yourself &#128526;</h3>
+    <form action="/" method="post">
+
+
+        <div class="mb-3">
+            <select name="body-name" class="form-control mx-auto w-auto">
+                <option disabled selected>Body Part</option>
+                {% for body in parts %}
+                    <option value="{{ body }}">{{ body }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" autofocus name="exercise-name" class="form-control mx-auto w-auto" placeholder="Exercise Name" type="text">
+        </div>
+
+        <div class="mb-3">
+            <input autocomplete="off" name="date" class="form-control mx-auto w-auto" type="date">
+        </div>
+
+        <div class="mb-3">
+            <label class="switch">
+                <p>Reverse</p>
+                <input type="checkbox" class="checkbox" name="toggle">
+                <div class="slider"></div>
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
 <table class="table table-striped">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Body part</th>
             <th>Exercise name</th>
             <th>Set</th>
             <th>Rep</th>
             <th>Kg</th>
             <th>Load</th>
+            <th>Date</th>
         </tr>
     </thead>
     <tbody>
         {% for track in tracks %}
         <tr>
+            <td>{{ track["id"] }}</td>
             <td>{{ track["body"] }}</td>
             <td>{{ track["exercise"] }}</td>
             <td>{{ track["sett"] }}</td>
             <td>{{ track["rep"] }}</td>
             <td>{{ track["kg"] }}</td>
-            <td>{{ track["kg"] * track["rep"] * track["sett"] }}</td>
+            <td>{{ track["loadd"] }}</td>
+            <td>{{ track["time"][0:10] }}</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
+<style>
+
+.switch {
+    display:flex;
+    gap: 5px;
+    justify-content:center;
+}
+.checkbox {
+  display: none;
+}
+
+.slider {
+  width: 60px;
+  height: 30px;
+  background-color: lightgray;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 4px solid transparent;
+  transition: .3s;
+  box-shadow: 0 0 10px 0 rgb(0, 0, 0, 0.25) inset;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: translateX(-30px);
+  border-radius: 20px;
+  transition: .3s;
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(30px);
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider {
+  background-color: #2196F3;
+}
+
+.checkbox:active ~ .slider::before {
+  transform: translate(0);
+}
+</style>
 {% endblock %}

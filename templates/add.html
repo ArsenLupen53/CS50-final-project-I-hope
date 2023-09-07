@@ -5,31 +5,35 @@
 {% endblock %}
 
 {% block main %}
+    <h3>Many a little make a mickle &#129309;</h3>
     <form action="/add" method="post">
-        <div class="inputBox">
-            <input autocomplete="off" autofocus name="body-name" placeholder="Write here..." type="text" required="">
-            <span>Body Part:</span>
+        <div class="mb-3">
+            <select name="body-name" class="form-control mx-auto w-auto">
+                <option disabled selected>Body Part</option>
+                {% for body in parts %}
+                    <option value="{{ body }}">{{ body }}</option>
+                {% endfor %}
+            </select>
         </div>
 
-        <div class="inputBox">
-            <input autocomplete="off" autofocus name="exercise-name" placeholder="Write here..." type="text" required="">
-            <span>Exercise Name:</span>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus name="exercise-name" class="form-control mx-auto w-auto" placeholder="Exercise Name" type="text" required="">
         </div>
 
-        <div class="inputBox">
-            <input autocomplete="off" autofocus name="sets"  type="number" required="">
-            <span>Sets:</span>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus name="kgs" class="form-control mx-auto w-auto" placeholder="Kgs" type="number" required="">
+
         </div>
 
-        <div class="inputBox">
-            <input autocomplete="off" autofocus name="reps"  type="number" required="">
-            <span>Reps:</span>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus name="sets" class="form-control mx-auto w-auto" placeholder="Sets" type="number" required="">
+
         </div>
 
-        <div class="inputBox">
-            <input autocomplete="off" autofocus name="kgs"  type="number" required="">
-            <span>Kgs:</span>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus name="reps"class="form-control mx-auto w-auto" placeholder="Reps" type="number" required="">
+
         </div>
-        <button type="submit">Add</button>
+        <button class="btn btn-primary" type="submit">Add</button>
     </form>
 {% endblock %}
