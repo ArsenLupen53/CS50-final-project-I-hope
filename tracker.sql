@@ -7,10 +7,7 @@
 --    sett INTEGER NOT NULL,
 --    rep INTEGER NOT NULL,
 --    kg INTEGER NOT NULL,
---    loadd INTEGER NOT NULL,
---    datee INTEGER NOT NULL,
---   month INTEGER NOT NULL,
---  year INTEGER NOT NULL
+--    loadd INTEGER NOT NULL
 --);
 
 

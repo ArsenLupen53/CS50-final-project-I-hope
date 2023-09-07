@@ -101,7 +101,7 @@ def login():
     else:
         return render_template("login.html")
     
-@app.route("/add", methods=["GET","POST"])
+@app.route("/add-workout", methods=["GET","POST"])
 def add():
     user_id = session["user_id"]
 
